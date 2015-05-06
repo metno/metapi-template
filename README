@@ -1,4 +1,6 @@
-This is your new Play application
-=================================
+Template for new metapi submodules
+==================================
 
-This file will be packaged with your application, when using `activator dist`.
+This is meant to be used as a starting point when creating new modules
+for metapi.
+
