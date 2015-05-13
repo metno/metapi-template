@@ -26,6 +26,6 @@ publishTo := {
   else
     Some("releases"  at nexus + "service/local/staging/deploy/maven2")
 }
-```
 
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+```
