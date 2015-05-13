@@ -36,8 +36,8 @@ import play.api.mvc._
 
 object TemplateController extends Controller {
 
-  def sample: Action[AnyContent] = Action {
-    Ok("Implement me")
+  def template: Action[AnyContent] = Action {
+    Ok("template plugin")
   }
 
 }
