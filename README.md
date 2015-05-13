@@ -1,19 +1,22 @@
-Template for new metapi submodules
-==================================
+# Template for new metapi submodules
 
 This is meant to be used as a starting point when creating new modules
 for metapi.
 
-You need to make the following changes to create your own project:
+A script. `renameto` is provided, renaming files and classes here to what 
+you decide. you may run it like this:
 
-  * Rename and modify app/controllers/template - both contents and names
-  * Rename and modify conf/template.routes
-  * Edit build.sbt - remove any reference to template
+`./renameto foo`
+
+It will rename some files and classes, making them have foo-like names. 
+Remember not to commit the results back to metapi-template, but on a 
+new remote. 
+
 
 ## Global dependencies
 
-Also, for publishing, make sure the file ~/.sbt/0.13/global.sbt exists,
-with the following contents:
+Also, for publishing to metno, make sure the file ~/.sbt/0.13/global.sbt 
+exists, with the following contents:
 
 ```Scala
 publishTo := {
