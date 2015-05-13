@@ -7,14 +7,14 @@ rename() {
 	OLD=$1
 	
 	NEW_NAME="sed s/Template/${CLASSNAME}/ | sed s/template/$NAME/"
-	NEW_FILE=`echo $OLD | sed s/Template/${CLASSNAME}/ | sed s/template/$NAME/`
+	NEW_FILE=`echo $OLD | sed s/Template/${CLASSNAME}/g | sed s/template/$NAME/g`
 	
 	if [ $NEW_FILE = $OLD ]; then
 		cp $OLD .f.tmp
 		OLD=.f.tmp
 	fi
 	mkdir -p `dirname $NEW_FILE`
-	cat $OLD | sed s/Template/${CLASSNAME}/ | sed s/template/$NAME/ > $NEW_FILE
+	cat $OLD | sed s/Template/${CLASSNAME}/g | sed s/template/$NAME/g > $NEW_FILE
 	
 	rm -f $OLD
 }
