@@ -1,0 +1,24 @@
+#!/bin/sh
+
+NAME=$1
+CLASSNAME=`echo $NAME | sed "s/$NAME/\u&/"`
+
+rename() {
+	OLD=$1
+	
+	NEW_NAME="sed s/Template/${CLASSNAME}/ | sed s/template/$NAME/"
+	NEW_FILE=`echo $OLD | sed s/Template/${CLASSNAME}/ | sed s/template/$NAME/`
+	
+	if [ $NEW_FILE = $OLD ]; then
+		cp $OLD .f.tmp
+		OLD=.f.tmp
+	fi
+	mkdir -p `dirname $NEW_FILE`
+	cat $OLD | sed s/Template/${CLASSNAME}/ | sed s/template/$NAME/ > $NEW_FILE
+	
+	rm -f $OLD
+}
+
+rename app/controllers/template/TemplateController.scala
+rename conf/template.routes
+rename build.sbt
